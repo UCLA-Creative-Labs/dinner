@@ -75,7 +75,7 @@ Beep boop. Beep boop. Here are some general guidelines:
 - Try to maintain a single bug or feature per PR. It's a okay to prune as you go, but bear in mind that code
   code reviews start to get fatigueing after 5 files.
 
-We use [eslint](.eslintrc.js) for `.ts` and `.tsx` files and [stylelint](.stylelintrc.json) for `.css` and `.scss` files. 
+We use [eslint](.eslintrc.js) for `.js` files. 
 Make sure your changes follow the linter rules as they can not be merged if thats the case.
 If there are any improvements that you wish to make to our linters, feel free to make an issue and PR to suggest changes!
 
@@ -116,11 +116,9 @@ We have a pipeline to ensure that our production code will always build.
 
 We recommend using Visual Studio Code to work on `Lab`. Be sure to install the [eslint extension](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) as we have strict linting rules that will prevent your code from merging. The combination of VSCode and this extension will allow you to automatically fix linter issues with a `Ctrl-` when hovering linter issues.
 
-We use both [ESLint](https://eslint.org/) and [StyleLint](https://stylelint.io/) for two different functions that will be explained below.
-
 ### ESLint
 
-We use ESLint for our TypeScript files (`**/*.ts` and `**/*.tsx`). ESLint has really fantastic functionality for linting JavaScript code so naturally we picked it as our linter for our code.
+We use ESLint for our JavaScript files (`**/*.js`). ESLint has really fantastic functionality for linting JavaScript code so naturally we picked it as our linter for our code.
 
 Notable Linter Rules:
 - no-console: dont litter 🗑
@@ -131,12 +129,6 @@ Notable Linter Rules:
 See our documented [`.eslintrc.js`](.eslintrc.js) file for more info.
 
 **Note:** We dont run `yarn lint` on `build` or `start`. This means you can avoid our linting rules during development (console logging 👀), and clean up your code when you make a pull request.
-
-### StyleLint
-
-We use StyleLint for our styled components (`**/*.css` and `**/*.scss`). Our linter rules for our style files are generic at the moment. We use the [standard configuration](https://github.com/stylelint/stylelint-config-standard), however if there are any edits that you think should be made, feel free to make a PR for it!
-
-See our [`.stylelintrc.json`](.stylelintrc.json) file for more info.
 
 ## Pipeline
 
