@@ -48,9 +48,9 @@ $ python3 -m http.server
 
 ## Contribution Workflow
 
-The following should be the general workflow of your pull requests. We have protected `master` so no one can 
-push directly to master. We also use [`mergify`](https://mergify.io/) to automate our merging process. No one 
-should be merging directly to `master`. Check out our [`.mergify.yml`](.mergify.yml) file for our conditions.
+The following should be the general workflow of your pull requests. We have protected `main` so no one can 
+push directly to main. We also use [`mergify`](https://mergify.io/) to automate our merging process. No one 
+should be merging directly to `main`. Check out our [`.mergify.yml`](.mergify.yml) file for our conditions.
 
 ### Step 1: Open an Issue
 
@@ -101,7 +101,7 @@ Create a commit with your changes.
 - All PRs are checked against a linter, netlify deploy, and conventional commits
 - Submit a Pull Request on GitHub. The maintainers will assign a reviewer.
 - Iterate until you get at least one “Approve”. When iterating, push new commits to the same branch. 
-- Most PR's will be squashed when you merge to master. If you want to disable squashing, request to add the label `pr/no-squash`
+- Most PR's will be squashed when you merge to main. If you want to disable squashing, request to add the label `pr/no-squash`
 
 ### Step 6: Merge
 
@@ -140,15 +140,15 @@ See our [`.stylelintrc.json`](.stylelintrc.json) file for more info.
 
 ## Pipeline
 
-`Sunshine` is configured to use a pipeline to merge changes to `master`. Humans aren't perfect, so we abstracted all our merging to a pipeline managed by a bot, [Mergify](https://mergify.io/). 
+`Sunshine` is configured to use a pipeline to merge changes to `main`. Humans aren't perfect, so we abstracted all our merging to a pipeline managed by a bot, [Mergify](https://mergify.io/). 
 
 ### Mergify
 
-Mergify is a great tool for managing production code. The idea is to rely on maintainers to validate and approve pull requests and let Mergify handle production. This way, no one directly touches `master`. 
+Mergify is a great tool for managing production code. The idea is to rely on maintainers to validate and approve pull requests and let Mergify handle production. This way, no one directly touches `main`. 
 
 Key Aspects:
 - Mergify checks to see if the title follows conventional commits
-- Mergify, by default, will squash merge changes onto master
+- Mergify, by default, will squash merge changes onto main
 - Mergify automatically merges Dependatbots PRs
 - Mergify automatically dismisses stale reviews
 

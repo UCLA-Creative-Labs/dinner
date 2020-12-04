@@ -14,10 +14,3 @@ As much as possible, the guidelines in this document are enforced by ESLint (for
 * For interfaces, JSON files, etc. the last field **must** have a trailing comma in order to have clean file diffs.
 * Local `import` statements must use relative file paths.
 
-## Assets
-
-All assets must go inside the `src/assets/` directory.
-As much as possible, use `.svg` files if you can.
-
-Remember from [**General Syntax and Format**](#general-syntax-and-format) above that imported asset names must be in PascalCase.
-Apart from that, you may name the asset whatever you feel is appropriate.
