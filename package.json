@@ -1,7 +1,8 @@
 {
   "private": true,
   "scripts": {
-    "lint": "npx eslint '**/*.js'"
+    "lint": "npx eslint '**/*.js'",
+    "no-lock": "./scripts/noPackageLock.sh"
   },
   "dependencies": {
     "eslint": "^7.6.0",
