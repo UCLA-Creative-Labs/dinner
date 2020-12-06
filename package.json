@@ -4,7 +4,7 @@
     "lint": "npx eslint '**/*.js'",
     "no-lock": "./scripts/noPackageLock.sh"
   },
-  "dependencies": {
+  "devDependencies": {
     "eslint": "^7.6.0",
     "eslint-plugin-import": "^2.22.0",
     "eslint-plugin-no-floating-promise": "^1.0.2",
