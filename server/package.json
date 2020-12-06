@@ -1,14 +1,15 @@
 {
   "private": true,
   "scripts": {
-    "start": "node index.js",
-    "start-nohup": "nohup yarn start > logs/lab.log 2> logs/lab.err &",
+    "start": "nodemon src/index.js",
+    "start-nohup": "nohup yarn start",
     "lint": "npx eslint '**/*.js'",
     "no-lock": "../scripts/noPackageLock.sh"
   },
   "dependencies": {
     "express": "^4.17.1",
-    "socket.io": "^3.0.3"
+    "socket.io": "^3.0.3",
+    "winston": "^3.3.3"
   },
   "devDependencies": {
     "eslint": "^7.6.0",
