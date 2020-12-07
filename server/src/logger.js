@@ -12,6 +12,6 @@ module.exports = createLogger({
   ),
   transports: [
     new transports.Console(),
-    new transports.File({ filename: 'log/server.log'}),
+    new transports.File({ filename: 'log/server.log', options: { flags: 'w' }}),
   ],
 });
