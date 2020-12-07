@@ -12,6 +12,7 @@
     "winston": "^3.3.3"
   },
   "devDependencies": {
+    "cors": "^2.8.5",
     "eslint": "^7.6.0",
     "eslint-plugin-import": "^2.22.0",
     "eslint-plugin-no-floating-promise": "^1.0.2",
