@@ -1,0 +1,22 @@
+{
+  "private": true,
+  "scripts": {
+    "start": "nodemon src/index.js",
+    "start-nohup": "nohup yarn start",
+    "lint": "npx eslint '**/*.js'",
+    "no-lock": "../scripts/noPackageLock.sh"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "socket.io": "^3.0.3",
+    "winston": "^3.3.3"
+  },
+  "devDependencies": {
+    "eslint": "^7.6.0",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-no-floating-promise": "^1.0.2",
+    "eslint-plugin-react": "^7.20.5",
+    "eslint-plugin-sort-class-members": "^1.8.0",
+    "nodemon": "^2.0.6"
+  }
+}
