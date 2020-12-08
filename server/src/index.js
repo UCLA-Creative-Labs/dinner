@@ -1,5 +1,4 @@
 const http = require('http');
-const cors = require('cors');
 const express = require('express');
 const socketIo = require('socket.io');
 const logger = require('./logger');
@@ -10,8 +9,8 @@ const io = socketIo(server, {
   cors: {
     origin: 'http://localhost:8080',
     methods: [ 'GET', 'POST' ],
-    credentials: true
-  }
+    credentials: true,
+  },
 });
 
 const rooms = {};
@@ -22,13 +21,13 @@ io.on('connection', (socket) => {
 
   let curRoom = null;
 
-  socket.on("joinRoom", data => {
+  socket.on('joinRoom', data => {
     const { room } = data;
 
     if (!rooms[room]) {
       rooms[room] = {
         name: room,
-        occupants: {}
+        occupants: {},
       };
     }
 
@@ -61,8 +60,8 @@ io.on('connection', (socket) => {
       socket.to(curRoom).broadcast.emit('occupantsChanged', { occupants });
 
       if (occupants == {}) {
-        logger.info(`Everyone left`);
-        delete rooms[curRoom]
+        logger.info('Everyone left');
+        delete rooms[curRoom];
       }
     }
   });

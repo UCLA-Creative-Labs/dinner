@@ -1,8 +1,8 @@
 const path = require('path');
-const dotenv = require('dotenv').config({ path: path.resolve(__dirname, './.env') });
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
+const dotenv = require('dotenv').config({ path: path.resolve(__dirname, './.env') });
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
 
 module.exports = {
@@ -19,7 +19,7 @@ module.exports = {
           loader: 'babel-loader',
           options: {
             presets: [
-              '@babel/preset-env'
+              '@babel/preset-env',
             ],
           },
         },
@@ -28,8 +28,8 @@ module.exports = {
         test: /\.json$/i,
         exclude: /node_modules/,
         loader: 'json5-loader',
-        type: 'javascript/auto'
-      }
+        type: 'javascript/auto',
+      },
     ],
   },
   resolve: {
@@ -46,11 +46,11 @@ module.exports = {
         {
           from: 'src/assets',
           to: 'assets',
-        }
-      ]
+        },
+      ],
     }),
     new webpack.DefinePlugin({
-      'process.env': JSON.stringify(dotenv.parsed)
-    })
+      'process.env': JSON.stringify(dotenv.parsed),
+    }),
   ],
 };
