@@ -1,10 +1,10 @@
+const { exec } = require('child_process');
 const express = require('express');
-const { exec } = require('child_process')
 const logger = require('./logger');
 
 const app = express();
 app.post('/server', (req, res) => {
-  exec("bash ./pipeline/cmd.sh", (error, stdout, stderr) => {
+  exec('bash ./pipeline/cmd.sh', (error, stdout, stderr) => {
     if (error) {
       logger.error(`Command Error: ${error}`);
       return;
