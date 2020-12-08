@@ -1,6 +1,7 @@
 {
   "private": true,
   "scripts": {
+    "pipeline": "nodemon pipeline/index.js",
     "start": "nodemon src/index.js",
     "start-nohup": "nohup yarn start",
     "lint": "npx eslint '**/*.js'",
