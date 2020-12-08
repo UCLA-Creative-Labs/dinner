@@ -1,9 +1,14 @@
 {
   "private": true,
   "scripts": {
-    "pipeline": "nodemon pipeline/index.js",
+    "pipeline": "node pipeline/index.js",
+    "build-pipeline": "nohup node pipeline/index.js &",
+    "kill-pipeline": "kill -9 $(lsof -ti:30000)",
     "start": "nodemon src/index.js",
-    "start-nohup": "nohup yarn start",
+    "build": "nohup node src/index.js &",
+    "kill-server": "kill -9 $(lsof -ti:3000)",
+    "clear-logs": "echo '' > log/master.log",
+    "clean": "yarn kill-server && yarn kill-pipeline",
     "lint": "npx eslint '**/*.js'",
     "no-lock": "../scripts/noPackageLock.sh"
   },
