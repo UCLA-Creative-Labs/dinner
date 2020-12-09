@@ -5,7 +5,7 @@ on:
       - main
 
 jobs:
-  Trigger Server Build:
+  trigger-server-build:
     name: Server Hook
     runs-on: ubuntu-latest
 
