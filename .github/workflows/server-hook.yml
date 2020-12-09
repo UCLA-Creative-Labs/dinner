@@ -11,4 +11,4 @@ jobs:
 
     steps:
       - name: Call webhook
-        uses: curl -X POST http://129.146.123.25:30000/server
+        run: curl -X POST http://129.146.123.25:30000/server
