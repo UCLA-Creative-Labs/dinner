@@ -5,7 +5,7 @@ const PLAYER = document.querySelector('#player');
 /* eslint-enable no-undef, no-unused-vars */
 
 function setupNetworking() {
-  const serverUrl = process.env.NODE_ENV === 'production' ? 'TODO' : 'http://localhost:3000';
+  const serverUrl = process.env.NODE_ENV === 'production' ? 'http://yummy-server.creativelabsucla.com/' : 'http://localhost:3000';
   const shouldDebug = process.env.NODE_ENV === 'production' ? false : true;
   MAIN_SCENE.setAttribute('networked-scene', {
     serverURL: serverUrl,
