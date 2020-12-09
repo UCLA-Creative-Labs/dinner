@@ -1,0 +1,14 @@
+name: Server Hook
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  Trigger Server Build:
+    name: Server Hook
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Call webhook
+        uses: curl -X POST http://129.146.123.25:30000/server
