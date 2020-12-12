@@ -1,7 +1,7 @@
-# Lab Server
+# Chef Server
 
 The current directory is the base for all backend code for
-[Lab](https://github.com/UCLA-Creative-Labs/lab.git).
+[Chef](https://github.com/UCLA-Creative-Labs/chef.git).
 
 ## Getting Started
 

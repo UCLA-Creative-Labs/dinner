@@ -1,6 +1,6 @@
 # Contributing Guidelines
 
-Thanks for your interest in contributing to the Creative Labs website, aka Lab! ❤️
+Thanks for your interest in contributing to our virtual gallery, aka Chef! ❤️
 
 These guidelines describe how to set up your environment and submit your own contributions! Please read it 
 carefully and, if there is anything that isn't up-to-date, feel free to submit a PR with your corrections 🙃
@@ -27,8 +27,8 @@ We use [`yarn`](https://classic.yarnpkg.com/en/docs/install#mac-stable) as our p
 The basic commands to get this repository and start are:
 
 ```
-$ git clone https://github.com/UCLA-Creative-Labs/lab.git
-$ cd lab
+$ git clone https://github.com/UCLA-Creative-Labs/chef.git
+$ cd chef
 $ yarn install
 ```
 
@@ -114,7 +114,7 @@ We have a pipeline to ensure that our production code will always build.
 
 ## Tools
 
-We recommend using Visual Studio Code to work on `Lab`. Be sure to install the [eslint extension](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) as we have strict linting rules that will prevent your code from merging. The combination of VSCode and this extension will allow you to automatically fix linter issues with a `Ctrl-` when hovering linter issues.
+We recommend using Visual Studio Code to work on `Chef`. Be sure to install the [eslint extension](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) as we have strict linting rules that will prevent your code from merging. The combination of VSCode and this extension will allow you to automatically fix linter issues with a `Ctrl-` when hovering linter issues.
 
 ### ESLint
 
@@ -132,7 +132,7 @@ See our documented [`.eslintrc.js`](.eslintrc.js) file for more info.
 
 ## Pipeline
 
-`Lab` is configured to use a pipeline to merge changes to `main`. Humans aren't perfect, so we abstracted all our merging to a pipeline managed by a bot, [Mergify](https://mergify.io/). 
+`Chef` is configured to use a pipeline to merge changes to `main`. Humans aren't perfect, so we abstracted all our merging to a pipeline managed by a bot, [Mergify](https://mergify.io/). 
 
 ### Mergify
 

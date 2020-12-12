@@ -1,8 +1,8 @@
-# Lab Client
+# Chef Client
 
-The current directory is the base for all frontend code for [Lab](https://github.com/UCLA-Creative-Labs/lab.git).
+The current directory is the base for all frontend code for [Chef](https://github.com/UCLA-Creative-Labs/chef.git).
 
-To run the client, make sure you're in this directory (`lab/client/`) simply run the following:
+To run the client, make sure you're in this directory (`chef/client/`) simply run the following:
 
 ```sh
 $ yarn install
