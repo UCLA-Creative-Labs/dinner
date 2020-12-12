@@ -1,8 +1,8 @@
-# Chef Client
+# Dinner Client
 
-The current directory is the base for all frontend code for [Chef](https://github.com/UCLA-Creative-Labs/chef.git).
+The current directory is the base for all frontend code for [Dinner](https://github.com/UCLA-Creative-Labs/dinner.git).
 
-To run the client, make sure you're in this directory (`chef/client/`) simply run the following:
+To run the client, make sure you're in this directory (`dinner/client/`) simply run the following:
 
 ```sh
 $ yarn install

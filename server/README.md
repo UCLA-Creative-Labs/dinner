@@ -1,7 +1,7 @@
-# Chef Server
+# Dinner Server
 
 The current directory is the base for all backend code for
-[Chef](https://github.com/UCLA-Creative-Labs/chef.git).
+[Dinner](https://github.com/UCLA-Creative-Labs/dinner.git).
 
 ## Getting Started
 
