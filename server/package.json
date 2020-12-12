@@ -1,12 +1,19 @@
 {
   "private": true,
   "scripts": {
+    "pipeline": "node pipeline/index.js",
+    "build-pipeline": "nohup node pipeline/index.js &",
+    "kill-pipeline": "kill -9 $(lsof -ti:30000)",
     "start": "nodemon src/index.js",
-    "start-nohup": "nohup yarn start",
+    "build": "nohup node src/index.js &",
+    "kill-server": "kill -9 $(lsof -ti:3000)",
+    "clear-logs": "echo '' > log/master.log",
+    "clean": "yarn kill-server && yarn kill-pipeline",
     "lint": "npx eslint '**/*.js'",
     "no-lock": "../scripts/noPackageLock.sh"
   },
   "dependencies": {
+    "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "socket.io": "^3.0.3",
     "winston": "^3.3.3"
