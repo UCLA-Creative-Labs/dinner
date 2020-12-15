@@ -9,7 +9,7 @@ const app = express();
 const server = http.createServer(app);
 const io = socketIo(server, {
   cors: {
-    origin: 'http://localhost:8080',
+    origin: [ 'http://localhost:8080', /.*\.creativelabsucla\.com$/],
     methods: [ 'GET', 'POST' ],
     credentials: true,
   },
