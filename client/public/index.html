@@ -2,11 +2,11 @@
     <head>
         <meta charset="UTF-8" />
         <title>Dinner 'n' Demos</title>
-
         <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.0.4/socket.io.min.js"></script>
         <script src="https://unpkg.com/networked-aframe/dist/networked-aframe.min.js"></script>
-
+        <script src="https://cdn.jsdelivr.net/gh/n5ro/aframe-physics-system@v4.0.1/dist/aframe-physics-system.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
         <link rel="shortcut icon" href="assets/favicon.ico" />
     </head>
     <body>
@@ -18,55 +18,47 @@
                             class="head"
                             color="#ffffff"
                             scale="0 0 0"
+                            position="0 0.5 0"
                         ></a-sphere>
                         <a-obj-model
                             src="assets/steve.obj"
                             mtl="assets/steve.mtl"
-                            scale="0.08 0.08 0.08"
-                            position="0 -0.52 0"
+                            scale="0.15 0.15 0.15"
+                            position="0 -1"
                         ></a-obj-model>
                     </a-entity>
                 </template>
             </a-assets>
-
             <a-entity
                 id="player"
                 networked="
-          template: #avatar-template;
-          attachTemplateToLocal: false;
-        "
+                template: #avatar-template;
+                attachTemplateToLocal: false;
+                "
                 camera
                 wasd-controls
                 look-controls
+                spawn-in-circle="radius:5"
                 position="0 0.5 0"
+                rotation="0 0 0 "
             >
                 <a-obj-model class="head"></a-obj-model>
             </a-entity>
+            <a-entity
+                gltf-model="assets/kitchenscene.gltf"
+                position="0 -0.5 0"
+                scale="0.1 0.1 0.1"
+            ></a-entity>
+            <a-entity
+                gltf-model="assets/kitchenscenenav2.gltf"
+                position="0 0.0 0"
+                scale="0.1 0.1 0.1"
+                visible="false"
+                nav-mesh
+            ></a-entity>
 
-            <a-box
-                position="-1 0.5 -3"
-                rotation="0 45 0"
-                color="#4CC3D9"
-            ></a-box>
-            <a-sphere
-                position="0 1.25 -5"
-                radius="1.25"
-                color="#EF2D5E"
-            ></a-sphere>
-            <a-cylinder
-                position="1 0.75 -3"
-                radius="0.5"
-                height="1.5"
-                color="#FFC65D"
-            ></a-cylinder>
-            <a-plane
-                position="0 0 -4"
-                rotation="-90 0 0"
-                width="40"
-                height="40"
-                color="#7BC8A4"
-            ></a-plane>
-            <a-sky color="#ECECEC"></a-sky>
+            <a-sky color="#87CEEB"></a-sky>
         </a-scene>
     </body>
+    >>>>>>> 7c69eb36f9b98c44ac1fa241e2bbb15b5e972933
 </html>
