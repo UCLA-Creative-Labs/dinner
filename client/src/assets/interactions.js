@@ -13,21 +13,34 @@ _AFRAME.registerComponent('cursor-listener', {
   }
 });
 
+function slideshow(){
+  
+}
 _AFRAME.registerComponent('slideshow', {
+  schema: {
+    project : {type: 'string', default: 'project1'}
+  },
   init: function () {
+    console.log("yeet")
     var lastIndex = -1;
-    var slides = ["1.jpg", "2.jpg"];
+    var projectSlides = {
+      "project1": ["1.jpg", "2.jpg"],
+      "project2": ["1.jpg", "2.jpg"],
+      "project3": ["1.jpg", "2.jpg"],
+    }
+    var slides = projectSlides[this.data.project];
+    var project = this.data.project;
     var t;
     this.el.addEventListener('mouseenter', function (evt) {
-      console.log("entered")
+        lastIndex = (lastIndex + 2) % slides.length;
+        this.setAttribute('src', `assets/images/${project}/${slides[lastIndex]}`);
         t = setInterval(() => {
         lastIndex = (lastIndex + 1) % slides.length;
-        this.setAttribute('src', "assets/images/" + slides[lastIndex]);
-      }, 5000)
+        this.setAttribute('src', `assets/images/${project}/${slides[lastIndex]}`);
+      }, 2000)
     });
 
     this.el.addEventListener('mouseleave', function (evt) {
-      console.log('left')
       clearTimeout(t);
   });
   }
