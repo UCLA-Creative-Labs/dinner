@@ -8,6 +8,7 @@
     <script src='https://unpkg.com/networked-aframe/dist/networked-aframe.min.js'></script>
     <script src='https://cdn.jsdelivr.net/gh/n5ro/aframe-physics-system@v4.0.1/dist/aframe-physics-system.min.js'></script>
     <script src='https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js'></script>
+    <script src="assets/interactions.js"></script>
     <link rel='shortcut icon' href='assets/favicon.ico' />
   </head>
   <body>
@@ -44,10 +45,19 @@
       spawn-in-circle="radius:3"
       position="0 0.5 0"
      >
-      <a-obj-model class="head"></a-obj-model>
+      <a-entity 
+        raycaster="objects: .interactable"
+        cursor="fuse: true; fuseTimeout: 500"
+        position="0 0 -1"
+        geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.03"
+        material="color: black; shader: flat">
+      </a-entity>
+      <a-obj-model rotation="0 90 0" class="head"></a-obj-model>
     </a-entity>
-      <a-entity gltf-model='assets/kitchenscene.gltf' position='0 -0.5 0' scale='0.1 0.1 0.1'></a-entity>
-      <a-entity gltf-model='assets/kitchenscenenav2.gltf' position='0 0.0 0' scale='0.1 0.1 0.1' visible='false' nav-mesh></a-entity>
+      <a-entity gltf-model='assets/test.glb' position='0 -0.5 0' scale='0.8 0.8 0.8'></a-entity>
+      <a-entity gltf-model='assets/test.glb' position='0 0.0 0' scale='0.8 0.8 0.8' visible='false' nav-mesh></a-entity>
+      <! --<a-entity id="box" class="interactable" cursor-listener geometry="primitive: box" material="color: blue"></a-entity>--> 
+      <a-box  class="interactable" slideshow src="assets/images/1.jpg" position="-0.5 0.23 2.8" height="0.5" depth="0.5" width="0.5" rotation="-180 180 180"></a-plane>
       <a-sky color='#87CEEB'></a-sky>
     </a-scene>
   </body>
