@@ -1,8 +1,8 @@
 const http = require('http');
+const dotenv = require('dotenv');
 const express = require('express');
 const socketIo = require('socket.io');
 const logger = require('./logger');
-const dotenv = require('dotenv');
 dotenv.config();
 
 const app = express();
