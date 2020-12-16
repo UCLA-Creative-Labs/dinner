@@ -12,7 +12,12 @@
     <link rel='shortcut icon' href='assets/favicon.ico' />
   </head>
   <body>
-    <a-scene networked-scene>
+
+    <a-scene networked-scene
+    renderer="
+    colorManagement: true;
+    "
+    >
         <a-assets>
             <template id="avatar-template">
                 <a-entity class="avatar">
@@ -32,7 +37,7 @@
                 </a-entity>
             </template>
       </a-assets>
-  <a-entity rotation="0 180 0">
+  <a-entity movement-controls='constrainToNavMesh: true' rotation="0 180 0">
     <a-entity
       id="player"
       networked="
@@ -40,7 +45,6 @@
       attachTemplateToLocal: false;
       "
       camera
-      wasd-controls
       look-controls
       spawn-in-circle="radius:3"
       position="0 0.5 0"
@@ -51,6 +55,7 @@
         position="0 0 -1"
         geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.022"
         material="color: white; shader: flat">
+
       </a-entity>
       <a-obj-model class="head"></a-obj-model>
     </a-entity>
@@ -66,8 +71,7 @@
         <a-box  class="interactable" slideshow="project: project3" src="assets/images/project3/1.jpg" height="1.75" depth="0.1" width="1.75" rotation="0 0 0"></a-plane>
       </a-entity>
     </a-entity>
-      <a-entity gltf-model='assets/test.glb' position='0 -0.5 0' scale='0.8 0.8 0.8'></a-entity>
-      <a-entity gltf-model='assets/test.glb' position='0 0.0 0' scale='0.8 0.8 0.8' visible='false' nav-mesh></a-entity>
+    <a-entity gltf-model='assets/resto_lightmapped.gltf' position='0 -0.5 0' scale='0.8 0.8 0.8'></a-entity>
       <a-sky color='#87CEEB'></a-sky>
     </a-scene>
   </body>
