@@ -2,7 +2,7 @@
   <head>
     <meta charset='UTF-8' />
     <title>Dinner 'n' Demos</title>
-
+    <link rel="stylesheet" href="assets/style.css" />
     <script src='https://aframe.io/releases/1.0.4/aframe.min.js'></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.0.4/socket.io.min.js'></script>
     <script src='https://unpkg.com/networked-aframe/dist/networked-aframe.min.js'></script>
@@ -11,6 +11,9 @@
     <link rel='shortcut icon' href='assets/favicon.ico' />
   </head>
   <body>
+    <div id='loader'>
+      <div id='loading'></div>
+    </div>
     <a-scene
       networked-scene
       renderer="

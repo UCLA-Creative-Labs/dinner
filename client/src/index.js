@@ -1,3 +1,12 @@
+// Loader
+document.addEventListener('DOMContentLoaded', function() {
+  const scene = document.querySelector('a-scene');
+  const loader = document.querySelector('#loader');
+  scene.addEventListener('loaded', function (_) {
+    loader.style.display = 'none';
+  });
+});
+
 /* eslint-disable no-undef, no-unused-vars */
 const _AFRAME = AFRAME; // so that ESLint doesn't complain about AFRAME being undefined
 const MAIN_SCENE = _AFRAME.scenes[0];
