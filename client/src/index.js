@@ -1,8 +1,8 @@
 // Loader
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', () => {
   const scene = document.querySelector('a-scene');
   const loader = document.querySelector('#loader');
-  scene.addEventListener('loaded', function (_) {
+  scene.addEventListener('loaded', () => {
     loader.style.display = 'none';
   });
 });
