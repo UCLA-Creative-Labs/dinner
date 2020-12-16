@@ -11,7 +11,12 @@
     <link rel='shortcut icon' href='assets/favicon.ico' />
   </head>
   <body>
-    <a-scene networked-scene>
+    <a-scene
+      networked-scene
+      renderer="
+      colorManagement: true;
+      "
+    >
       <a-assets>
         <template id='avatar-template'>
           <a-sphere
@@ -22,8 +27,7 @@
         </template>
       </a-assets>
 
-      <a-entity gltf-model='assets/kitchenscene.gltf' position='0 -0.5 0' scale='0.1 0.1 0.1'></a-entity>
-      <a-entity gltf-model='assets/kitchenscenenav2.gltf' position='0 0.0 0' scale='0.1 0.1 0.1' visible='false' nav-mesh></a-entity>
+      <a-entity gltf-model='assets/resto_lightmapped.gltf' position='0 -0.5 0' scale='0.8 0.8 0.8'></a-entity>
 
       <a-entity id='player'
         movement-controls='constrainToNavMesh: true'
