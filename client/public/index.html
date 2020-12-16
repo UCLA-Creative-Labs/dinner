@@ -26,18 +26,19 @@
                         color="#ffffff"
                         scale="0 0 0"
                         position="0 0.5 0"
+                        rotation="0 0 0"
                     ></a-sphere>
-                    <a-obj-model
-                        src="assets/steve.obj"
-                        mtl="assets/steve.mtl"
-                        rotation="0 -90 0"
-                        scale="0.15 0.15 0.15"
+                    <a-gltf-model
+                        src="assets/scene.gltf"
+                        scale="0.001 0.001 0.001"
                         position="0 -1 0"
-                    ></a-obj-model>
+                        rotation="0 180 0"
+                    ></a-gltf-model>
                 </a-entity>
             </template>
       </a-assets>
-  <a-entity movement-controls='constrainToNavMesh: true' rotation="0 180 0">
+      <a-entity>
+  <a-entity id="rig">
     <a-entity
       id="player"
       networked="
@@ -45,6 +46,7 @@
       attachTemplateToLocal: false;
       "
       camera
+      wasd-controls
       look-controls
       spawn-in-circle="radius:3"
       position="0 0.5 0"
@@ -60,7 +62,7 @@
       <a-obj-model class="head"></a-obj-model>
     </a-entity>
     </a-entity>
-    <a-entity position="-1.5 1 13">
+    <a-entity position="5.5 1 -13">
       <a-entity position="0 0 0">
         <a-box  class="interactable" slideshow="project: project1" src="assets/images/project1/1.jpg" height="1.75" depth="0.1" width="1.75" rotation="0 0 0"></a-plane>
       </a-entity>
@@ -71,7 +73,7 @@
         <a-box  class="interactable" slideshow="project: project3" src="assets/images/project3/1.jpg" height="1.75" depth="0.1" width="1.75" rotation="0 0 0"></a-plane>
       </a-entity>
     </a-entity>
-    <a-entity gltf-model='assets/resto_lightmapped.gltf' position='0 -0.5 0' scale='0.8 0.8 0.8'></a-entity>
+    <a-entity gltf-model='assets/resto_lightmapped.gltf' position='0 -0.5 0' rotation="0 180 0" scale='0.8 0.8 0.8'></a-entity>
       <a-sky color='#87CEEB'></a-sky>
     </a-scene>
   </body>
