@@ -12,13 +12,15 @@
   </head>
   <body>
     <a-scene
-      networked-scene
+      networked-scene='
+        audio: true;
+      '
       renderer="
       colorManagement: true;
       "
     >
       <a-assets>
-        <template id='avatar-template'>
+        <template id='avatar-template' networked-audio-source>
           <a-sphere
             color='#F5F5DC'
             radius='0.25'
