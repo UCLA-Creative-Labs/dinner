@@ -1,17 +1,18 @@
-// Loader
-document.addEventListener('DOMContentLoaded', () => {
-  const scene = document.querySelector('a-scene');
-  const loader = document.querySelector('#loader');
-  scene.addEventListener('loaded', () => {
-    loader.style.display = 'none';
-  });
-});
-
 /* eslint-disable no-undef, no-unused-vars */
 const _AFRAME = AFRAME; // so that ESLint doesn't complain about AFRAME being undefined
 const MAIN_SCENE = _AFRAME.scenes[0];
+
 const PLAYER = document.querySelector('#player');
+const ENVIRONMENT = document.querySelector('#environment');
+const LOADER = document.querySelector('#loader');
 /* eslint-enable no-undef, no-unused-vars */
+
+// Loader
+document.addEventListener('DOMContentLoaded', () => {
+  ENVIRONMENT.addEventListener('model-loaded', () => {
+    LOADER.style.display = 'none';
+  });
+});
 
 function setupNetworking() {
   const serverUrl = process.env.NODE_ENV === 'production' ? 'https://chef.creativelabsucla.com/' : 'http://localhost:3000';
