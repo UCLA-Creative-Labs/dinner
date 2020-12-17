@@ -6,15 +6,15 @@ const PLAYER = document.querySelector('#player');
 const ENVIRONMENT = document.querySelector('#environment');
 const LOADER = document.querySelector('#loader');
 const ICON = document.querySelector('#lottie');
-/* eslint-enable no-undef, no-unused-vars */
 
-let anim = lottie.loadAnimation({
+const anim = lottie.loadAnimation({
   container: ICON,
   renderer: 'svg',
   loop: true,
   autoplay: true,
   path: 'assets/ding.json',
 });
+/* eslint-enable no-undef, no-unused-vars */
 
 // Loader
 document.addEventListener('DOMContentLoaded', () => {
