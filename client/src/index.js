@@ -5,12 +5,24 @@ const MAIN_SCENE = _AFRAME.scenes[0];
 const PLAYER = document.querySelector('#player');
 const ENVIRONMENT = document.querySelector('#environment');
 const LOADER = document.querySelector('#loader');
+const ICON = document.querySelector('#lottie');
 /* eslint-enable no-undef, no-unused-vars */
+
+let anim = lottie.loadAnimation({
+  container: ICON,
+  renderer: 'svg',
+  loop: true,
+  autoplay: true,
+  path: 'assets/ding.json',
+});
 
 // Loader
 document.addEventListener('DOMContentLoaded', () => {
   ENVIRONMENT.addEventListener('model-loaded', () => {
-    LOADER.style.display = 'none';
+    LOADER.classList.add('fade');
+    setTimeout(() => {
+      LOADER.style.display = 'none';
+    }, 1000);
   });
 });
 
