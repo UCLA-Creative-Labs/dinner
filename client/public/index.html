@@ -2,7 +2,8 @@
   <head>
     <meta charset='UTF-8' />
     <title>Dinner 'n' Demos</title>
-
+    <link rel="stylesheet" href="assets/style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.7.5/lottie_light.min.js" integrity="sha512-1l62j2CRPEPWuhItXcsYJw52xGFtiBTkv0/TAEuuDCbakC3KMW/B3m7fu4iSMY54bP1nTrRC2DiHAuMt7eF0Vw==" crossorigin="anonymous"></script>
     <script src='https://aframe.io/releases/1.0.4/aframe.min.js'></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.0.4/socket.io.min.js'></script>
     <script src='https://unpkg.com/networked-aframe/dist/networked-aframe.min.js'></script>
@@ -11,6 +12,12 @@
     <link rel='shortcut icon' href='assets/favicon.ico' />
   </head>
   <body>
+    <div id='loader'>
+      <div id='container'>
+        <div id='msg'>Preparing your table</div>
+        <div id='lottie'></div>
+      </div>
+    </div>
     <a-scene
       networked-scene
       renderer="
@@ -27,7 +34,12 @@
         </template>
       </a-assets>
 
-      <a-entity gltf-model='assets/resto_lightmapped.gltf' position='0 -0.5 0' scale='0.8 0.8 0.8'></a-entity>
+      <a-entity
+        id='environment'
+        gltf-model='assets/resto_lightmapped.gltf'
+        position='0 -0.5 0'
+        scale='0.8 0.8 0.8'
+      ></a-entity>
 
       <a-entity id='player'
         movement-controls='constrainToNavMesh: true'

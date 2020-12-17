@@ -23,6 +23,11 @@ module.exports = {
     // Style
     'quotes': [ 'error', 'single', { avoidEscape: true } ],
 
+    'no-unused-vars': [
+      'error',
+      { argsIgnorePattern: '^_' },
+    ],
+
     // ensures clean diffs, see https://medium.com/@nikgraf/why-you-should-enforce-dangling-commas-for-multiline-statements-d034c98e36f8
     'comma-dangle': [ 'error', 'always-multiline' ],
 
