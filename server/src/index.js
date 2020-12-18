@@ -1,8 +1,8 @@
 const http = require('http');
-const dotenv = require('dotenv');
 const express = require('express');
 const socketIo = require('socket.io');
 const logger = require('./logger');
+const dotenv = require('dotenv');
 dotenv.config();
 
 const app = express();
@@ -71,3 +71,4 @@ io.on('connection', (socket) => {
 
 const port = process.env.PORT || 3000;
 server.listen(port, () => logger.info(`Listening on port ${port}`));
+
