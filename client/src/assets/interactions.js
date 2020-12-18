@@ -9,10 +9,11 @@ _AFRAME.registerComponent('slideshow', {
   init: function () {
     var lastIndex = -1;
     var projectSlides = {
-      project1: ['1.jpg', '2.jpg'],
-      project2: ['1.jpg', '2.jpg'],
-      project3: ['1.jpg', '2.jpg'],
+      project1: ['1.png', '2.png', '3.png'],
+      project2: ['1.jpg', '2.png', '3.png', '4.png', '5.jpg', '6.jpg'],
+      project3: ['1.jpg', '2.jpg', '3.jpg', '4.jpg', '5.jpg', '6.jpg', '7.jpg', '9.jpg', 'demo.mp4',],
     };
+    
     var slides = projectSlides[this.data.project];
     var project = this.data.project;
     var t;
@@ -20,12 +21,15 @@ _AFRAME.registerComponent('slideshow', {
       lastIndex = (lastIndex + 2) % slides.length;
       this.setAttribute('src', `assets/images/${project}/${slides[lastIndex]}`);
       t = setInterval(() => {
+        if (slides[lastIndex].includes(".mp4")){
+          return
+        }
         lastIndex = (lastIndex + 1) % slides.length;
         this.setAttribute(
           'src',
           `assets/images/${project}/${slides[lastIndex]}`,
         );
-      }, 2000);
+      }, 3000);
     });
 
     this.el.addEventListener('mouseleave', function (evt) {
