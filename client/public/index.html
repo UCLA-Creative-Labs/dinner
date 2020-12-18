@@ -23,7 +23,6 @@
             y: rot.y,
             z: 0,
 	  });
-	    console.log(rot);
 	}
       });
     </script>
@@ -55,30 +54,30 @@
         </template>
       </a-assets>
 
+      <a-entity
+        id='player'
+        networked='
+        template: #avatar-template;
+        attachTemplateToLocal: false;
+        '
+        movement-controls='constrainToNavMesh: true'
+      >
         <a-entity
-          id='player'
-          networked='
-          template: #avatar-template;
-          attachTemplateToLocal: false;
-          '
-          movement-controls='constrainToNavMesh: true'
+          id='player-camera'
+          camera
+          look-controls
+	  rot-listener
+          position='0 0.2 0'
         >
-          <a-entity
-            id='player-camera'
-            camera
-            look-controls
-	    rot-listener
-            position='0 0.2 0'
-          >
-            <a-entity 
-              raycaster='objects: .interactable'
-              cursor='fuse: true; fuseTimeout: 500'
-              position='0 0 -1'
-              geometry='primitive: ring; radiusInner: 0.02; radiusOuter: 0.022'
-              material='color: white; shader: flat'
-            ></a-entity>
-          </a-entity>
+          <a-entity 
+            raycaster='objects: .interactable'
+            cursor='fuse: true; fuseTimeout: 500'
+            position='0 0 -1'
+            geometry='primitive: ring; radiusInner: 0.02; radiusOuter: 0.022'
+            material='color: white; shader: flat'
+          ></a-entity>
         </a-entity>
+      </a-entity>
 
       <a-entity position='5.5 1 -13'>
         <a-entity position='0 0 0'>
