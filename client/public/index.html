@@ -2,16 +2,28 @@
   <head>
     <meta charset='UTF-8' />
     <title>Dinner 'n' Demos</title>
-    <link rel="stylesheet" href="assets/style.css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.7.5/lottie_light.min.js" integrity="sha512-1l62j2CRPEPWuhItXcsYJw52xGFtiBTkv0/TAEuuDCbakC3KMW/B3m7fu4iSMY54bP1nTrRC2DiHAuMt7eF0Vw==" crossorigin="anonymous"></script>
+    <link rel='stylesheet' href='assets/style.css' />
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.7.5/lottie_light.min.js' integrity='sha512-1l62j2CRPEPWuhItXcsYJw52xGFtiBTkv0/TAEuuDCbakC3KMW/B3m7fu4iSMY54bP1nTrRC2DiHAuMt7eF0Vw==' crossorigin='anonymous'></script>
     <script src='https://aframe.io/releases/1.0.4/aframe.min.js'></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.0.4/socket.io.min.js'></script>
     <script src='https://unpkg.com/networked-aframe/dist/networked-aframe.min.js'></script>
     <script src='https://cdn.jsdelivr.net/gh/n5ro/aframe-physics-system@v4.0.1/dist/aframe-physics-system.min.js'></script>
     <script src='https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js'></script>
+    <script src='assets/interactions.js'></script>
     <link rel='shortcut icon' href='assets/favicon.ico' />
   </head>
   <body>
+    <script>
+      AFRAME.registerComponent('rot-listener', {
+        tick: function () {
+          var el = this.el;
+          var rot = el.getAttribute('rotation');
+          let rotY = el.object3D.rotation.y;
+          document.getElementById('player').object3D.rotation.y = rotY;
+          el.object3D.rotation.y -= rotY;
+        }
+      });
+    </script>
     <div id='loader'>
       <div id='container'>
         <div id='msg'>Preparing your table</div>
@@ -20,41 +32,70 @@
     </div>
     <a-scene
       networked-scene
-      renderer="
+      renderer='
       colorManagement: true;
-      "
+      '
     >
       <a-assets>
         <template id='avatar-template'>
-          <a-sphere
-            color='#F5F5DC'
-            radius='0.25'
-            position='0 0 0'	   
-          ></a-sphere>
+          <a-entity
+            class='avatar'
+          >
+            <a-gltf-model
+              class='avatar-model'
+              src='assets/shiba.gltf'
+              scale='1 1 1'
+              position='0 -0.8 0'
+              rotation='90 180 0'
+            ></a-gltf-model>
+          </a-entity>
         </template>
       </a-assets>
+
+      <a-entity
+        id='player'
+        networked='
+        template: #avatar-template;
+        attachTemplateToLocal: true;
+        '
+        movement-controls='constrainToNavMesh: true'
+      >
+        <a-entity
+          id='player-camera'
+          camera
+          look-controls
+	  rot-listener
+          position='0 0.2 0'
+        >
+          <a-entity 
+            raycaster='objects: .interactable'
+            cursor='fuse: true; fuseTimeout: 500'
+            position='0 0 -1'
+            geometry='primitive: ring; radiusInner: 0.02; radiusOuter: 0.022'
+            material='color: white; shader: flat'
+          ></a-entity>
+        </a-entity>
+      </a-entity>
+
+      <a-entity position='5.5 1 -13'>
+        <a-entity position='0 0 0'>
+          <a-box  class='interactable' slideshow='project: project1' src='assets/images/project1/1.jpg' height='1.75' depth='0.1' width='1.75' rotation='0 0 0'></a-plane>
+        </a-entity>
+        <a-entity position='-2 0 0'>
+            <a-box  class='interactable' slideshow='project: project2' src='assets/images/project2/1.jpg' height='1.75' depth='0.1' width='1.75' rotation='0 0 0'></a-plane>
+        </a-entity>
+        <a-entity position='-4 0 0'>
+          <a-box  class='interactable' slideshow='project: project3' src='assets/images/project3/1.jpg' height='1.75' depth='0.1' width='1.75' rotation='0 0 0'></a-plane>
+        </a-entity>
+      </a-entity>
 
       <a-entity
         id='environment'
         gltf-model='assets/resto_lightmapped.gltf'
         position='0 -0.5 0'
+        rotation='0 180 0'
         scale='0.8 0.8 0.8'
       ></a-entity>
-
-      <a-entity id='player'
-        movement-controls='constrainToNavMesh: true'
-        networked='
-        template: #avatar-template;	
-        attachTemplateToLocal: false;
-        '
-      >
-        <a-entity
-          camera
-          look-controls
-          position='0 0.2 0'
-        ></a-entity>
-      </a-entity>
-
       <a-sky color='#87CEEB'></a-sky>
     </a-scene>
   </body>
