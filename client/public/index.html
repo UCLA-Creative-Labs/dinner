@@ -31,6 +31,7 @@
       </div>
     </div>
     <a-scene
+      light='defaultLightsEnabled: false'
       networked-scene
       renderer='
       colorManagement: true;
@@ -106,6 +107,8 @@
         scale='0.8 0.8 0.8'
       ></a-entity>
       <a-sky color='#87CEEB'></a-sky>
+      <a-entity light='type: ambient; color: #FFEFDA'></a-entity>
+      <a-entity light='type: directional; color: #FFF; intensity: 0.6' position='0 1 -1' ></a-entity>
     </a-scene>
   </body>
 </html>
