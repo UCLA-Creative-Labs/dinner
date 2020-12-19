@@ -1,3 +1,6 @@
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Arimo:wght@400;500&display=swap');
+</style>
 <html>
   <head>
     <meta charset='UTF-8' />
@@ -86,16 +89,29 @@
           ></a-entity>
         </a-entity>
       </a-entity>
-
-      <a-entity position='5.5 1 -13'>
-        <a-entity position='0 0 0'>
-          <a-box  class='interactable' slideshow='project: project1' src='assets/images/project1/1.jpg' height='1.75' depth='0.1' width='1.75' rotation='0 0 0'></a-plane>
+      <a-entity position='5.9 1 -15.9'>
+        <a-entity position='0 0 0' rotation='0 -45 0'>
+          <a-box  class='interactable' slideshow='project: project1' src='assets/images/project1/1.png' height='1.2' depth='0.1' width='2.3' rotation='0 0 0'></a-box>
+          <a-entity scale="6 6 1.5"  position="0 1.1 0" text="font-family: Arimo; value: TraceLA; color: #013220; align: center"></a-entity>
         </a-entity>
-        <a-entity position='-2 0 0'>
-            <a-box  class='interactable' slideshow='project: project2' src='assets/images/project2/1.jpg' height='1.75' depth='0.1' width='1.75' rotation='0 0 0'></a-plane>
+        <a-entity position='-2.5 0 -1'>
+            <a-box  class='interactable' slideshow='project: project2' src='assets/images/project2/1.jpg' height='1.2' depth='0.1' width='2.3' rotation='0 0 0'></a-box>
+            <a-entity scale="6 6 1.5"  position="0 1.15 0" text="font-family: Arimo; value: The\nYellow Springs; color: #013220; align: center"></a-entity>
+            <a-entity
+              obj-model='obj:assets/oxhead/oxhead2.obj;mtl:assets/oxhead/oxhead2.mtl'
+              position='-0.73 -1.21 0.5'
+              rotation='0 180 0'
+              scale='0.45 0.45 0.45'
+            ></a-entity>
+            <a-entity
+              gltf-model='assets/horseface/horseface.glb'
+              position='0.71 -1.2 0.47'
+              scale='0.4 0.4 0.4'
+            ></a-entity>
         </a-entity>
-        <a-entity position='-4 0 0'>
-          <a-box  class='interactable' slideshow='project: project3' src='assets/images/project3/1.jpg' height='1.75' depth='0.1' width='1.75' rotation='0 0 0'></a-plane>
+        <a-entity position='-5 0 0' rotation='0 45 0'>
+          <a-box  class='interactable' slideshow='project: project3' src='assets/images/project3/1.jpg' height='1.2' depth='0.1' width='2.3' rotation='0 0 0'></a-box>
+          <a-entity scale="6 6 1.5"  position='0 1.1 0' text="font-family: Arimo; value: WeChews; color: #013220; align: center"></a-entity>
         </a-entity>
       </a-entity>
 
