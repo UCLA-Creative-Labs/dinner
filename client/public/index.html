@@ -31,6 +31,7 @@
       </div>
     </div>
     <a-scene
+      light='defaultLightsEnabled: false'
       networked-scene
       renderer='
       colorManagement: true;
@@ -47,6 +48,7 @@
               scale='1 1 1'
               position='0 -0.8 0'
               rotation='90 180 0'
+              animation-mixer
             ></a-gltf-model>
           </a-entity>
         </template>
@@ -55,10 +57,10 @@
       <a-entity
         gltf-model='url(assets/scenenav3.gltf)'
         nav-mesh
-	visible='false'
+        visible='false'
         scale='0.8 0.8 0.8'
-	position='0 0 0'
-	rotation='0 180 0'
+        position='0 0 0'
+        rotation='0 180 0'
       ></a-entity>
       <a-entity
         id='player'
@@ -72,7 +74,7 @@
           id='player-camera'
           camera
           look-controls
-	  rot-listener
+          rot-listener
           position='0 0.2 0'
         >
           <a-entity 
@@ -99,12 +101,14 @@
 
       <a-entity
         id='environment'
-        gltf-model='assets/resto_lightmapped.gltf'
+        gltf-model='assets/scene.glb'
         position='0 -0.5 0'
         rotation='0 180 0'
         scale='0.8 0.8 0.8'
       ></a-entity>
       <a-sky color='#87CEEB'></a-sky>
+      <a-entity light='type: ambient; color: #FFEFDA'></a-entity>
+      <a-entity light='type: directional; color: #FFF; intensity: 0.6' position='0 1 -1' ></a-entity>
     </a-scene>
   </body>
 </html>
