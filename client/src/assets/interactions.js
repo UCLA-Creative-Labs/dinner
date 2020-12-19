@@ -10,7 +10,16 @@ _AFRAME.registerComponent('slideshow', {
     var lastIndex = -1;
     var projectSlides = {
       project1: ['1.png', '2.png', '3.png'],
-      project2: ['1.jpg', '2.png', '3.png', '4.png', '5.jpg', '6.jpg'],
+      project2: [
+        'slides-01.png',
+        'slides-02.png',
+        'slides-03.png',
+        'slides-04.png',
+        'slides-06.png',
+        'slides-07.png',
+        'slides-08.png',
+        'slides-09.png',
+      ],
       project3: ['1.jpg', '2.jpg', '3.jpg', '4.jpg', '5.jpg', '6.jpg', '7.jpg', '9.jpg', 'demo.mp4'],
     };
 
