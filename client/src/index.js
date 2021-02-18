@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function setupNetworking() {
-  const serverUrl = process.env.NODE_ENV === 'production' ? 'https://atlas.creativelabsucla.com/demo' : 'http://localhost:3000';
+  const serverUrl = process.env.NODE_ENV === 'production' ? 'https://demo.creativelabsucla.com/' : 'http://localhost:3000';
   const shouldDebug = process.env.NODE_ENV === 'production' ? false : true;
   MAIN_SCENE.setAttribute('networked-scene', {
     serverURL: serverUrl,
